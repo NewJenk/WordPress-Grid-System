@@ -1,0 +1,611 @@
+# Copyright (C) 2025 Shaun Jenkins
+# This file is distributed under the GPLv3 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Grid System 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/grid-system\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2025-10-20T22:06:31+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: grid-system\n"
+
+#. Plugin Name of the plugin
+#: grid-system.php
+msgid "Grid System"
+msgstr ""
+
+#. Plugin URI of the plugin
+#. Author URI of the plugin
+#: grid-system.php
+msgid "https://shaunjenkins.com/"
+msgstr ""
+
+#. Description of the plugin
+#: grid-system.php
+msgid "A powerful grid system for WordPress. Includes 4 Gutenberg (Block Editor) blocks that allow you to create beautiful, flexible and responsive layouts."
+msgstr ""
+
+#. Author of the plugin
+#: grid-system.php
+msgid "Shaun Jenkins"
+msgstr ""
+
+#: build/blocks/column/edit.js:1
+#: build/blocks/column/index.js:1
+#: build/blocks/responsive-spacer/edit.js:1
+#: build/blocks/responsive-spacer/index.js:1
+#: build/blocks/row/edit.js:1
+#: build/blocks/row/index.js:1
+#: src/blocks/column/edit.js:26
+#: src/blocks/responsive-spacer/edit.js:18
+#: src/blocks/row/edit.js:28
+msgid "Extra Small Viewports"
+msgstr ""
+
+#: build/blocks/column/edit.js:1
+#: build/blocks/column/index.js:1
+#: build/blocks/responsive-spacer/edit.js:1
+#: build/blocks/responsive-spacer/index.js:1
+#: build/blocks/row/edit.js:1
+#: build/blocks/row/index.js:1
+#: src/blocks/column/edit.js:27
+#: src/blocks/responsive-spacer/edit.js:19
+#: src/blocks/row/edit.js:29
+msgid "Small Viewports"
+msgstr ""
+
+#: build/blocks/column/edit.js:1
+#: build/blocks/column/index.js:1
+#: build/blocks/responsive-spacer/edit.js:1
+#: build/blocks/responsive-spacer/index.js:1
+#: build/blocks/row/edit.js:1
+#: build/blocks/row/index.js:1
+#: src/blocks/column/edit.js:28
+#: src/blocks/responsive-spacer/edit.js:20
+#: src/blocks/row/edit.js:30
+msgid "Medium Viewports"
+msgstr ""
+
+#: build/blocks/column/edit.js:1
+#: build/blocks/column/index.js:1
+#: build/blocks/responsive-spacer/edit.js:1
+#: build/blocks/responsive-spacer/index.js:1
+#: build/blocks/row/edit.js:1
+#: build/blocks/row/index.js:1
+#: src/blocks/column/edit.js:29
+#: src/blocks/responsive-spacer/edit.js:21
+#: src/blocks/row/edit.js:31
+msgid "Large Viewports"
+msgstr ""
+
+#: build/blocks/column/edit.js:1
+#: build/blocks/column/index.js:1
+#: build/blocks/responsive-spacer/edit.js:1
+#: build/blocks/responsive-spacer/index.js:1
+#: build/blocks/row/edit.js:1
+#: build/blocks/row/index.js:1
+#: src/blocks/column/edit.js:30
+#: src/blocks/responsive-spacer/edit.js:22
+#: src/blocks/row/edit.js:32
+msgid "Extra Large Viewports"
+msgstr ""
+
+#: build/blocks/column/edit.js:1
+#: build/blocks/column/index.js:1
+#: build/blocks/responsive-spacer/edit.js:1
+#: build/blocks/responsive-spacer/index.js:1
+#: src/blocks/column/edit.js:35
+#: src/blocks/responsive-spacer/edit.js:27
+msgid "Will apply from 0px to 575px"
+msgstr ""
+
+#: build/blocks/column/edit.js:1
+#: build/blocks/column/index.js:1
+#: build/blocks/responsive-spacer/edit.js:1
+#: build/blocks/responsive-spacer/index.js:1
+#: src/blocks/column/edit.js:36
+#: src/blocks/responsive-spacer/edit.js:28
+msgid "Will apply from 576px to 767px"
+msgstr ""
+
+#: build/blocks/column/edit.js:1
+#: build/blocks/column/index.js:1
+#: build/blocks/responsive-spacer/edit.js:1
+#: build/blocks/responsive-spacer/index.js:1
+#: src/blocks/column/edit.js:37
+#: src/blocks/responsive-spacer/edit.js:29
+msgid "Will apply from 768px to 991px"
+msgstr ""
+
+#: build/blocks/column/edit.js:1
+#: build/blocks/column/index.js:1
+#: build/blocks/responsive-spacer/edit.js:1
+#: build/blocks/responsive-spacer/index.js:1
+#: src/blocks/column/edit.js:38
+#: src/blocks/responsive-spacer/edit.js:30
+msgid "Will apply from 992px to 1199px"
+msgstr ""
+
+#: build/blocks/column/edit.js:1
+#: build/blocks/column/index.js:1
+#: build/blocks/responsive-spacer/edit.js:1
+#: build/blocks/responsive-spacer/index.js:1
+#: src/blocks/column/edit.js:39
+#: src/blocks/responsive-spacer/edit.js:31
+msgid "Will apply from 1200px and up"
+msgstr ""
+
+#: build/blocks/column/edit.js:1
+#: build/blocks/column/index.js:1
+#: src/blocks/column/edit.js:45
+msgid "Visible"
+msgstr ""
+
+#: build/blocks/column/edit.js:1
+#: build/blocks/column/index.js:1
+#: src/blocks/column/edit.js:47
+msgid "Column is visible at this breakpoint."
+msgstr ""
+
+#: build/blocks/column/edit.js:1
+#: build/blocks/column/index.js:1
+#: src/blocks/column/edit.js:50
+msgid "Hidden"
+msgstr ""
+
+#: build/blocks/column/edit.js:1
+#: build/blocks/column/index.js:1
+#: src/blocks/column/edit.js:52
+msgid "Column is hidden using \"d-none\"."
+msgstr ""
+
+#: build/blocks/column/edit.js:1
+#: build/blocks/column/index.js:1
+#: src/blocks/column/edit.js:62
+msgid "Default"
+msgstr ""
+
+#: build/blocks/column/edit.js:1
+#: build/blocks/column/index.js:1
+#: src/blocks/column/edit.js:64
+msgid "Column appears in its natural DOM order."
+msgstr ""
+
+#: build/blocks/column/edit.js:1
+#: build/blocks/column/index.js:1
+#: src/blocks/column/edit.js:70
+msgid "First"
+msgstr ""
+
+#: build/blocks/column/edit.js:1
+#: build/blocks/column/index.js:1
+#: src/blocks/column/edit.js:72
+msgid "Moves column visually to the start of the row."
+msgstr ""
+
+#: build/blocks/column/edit.js:1
+#: build/blocks/column/index.js:1
+#: src/blocks/column/edit.js:78
+msgid "Last"
+msgstr ""
+
+#: build/blocks/column/edit.js:1
+#: build/blocks/column/index.js:1
+#: src/blocks/column/edit.js:80
+msgid "Moves column visually to the end of the row."
+msgstr ""
+
+#: build/blocks/column/edit.js:1
+#: build/blocks/column/index.js:1
+#: src/blocks/column/edit.js:85
+msgid "Order value 0."
+msgstr ""
+
+#: build/blocks/column/edit.js:1
+#: build/blocks/column/index.js:1
+#: src/blocks/column/edit.js:86
+msgid "Order value 1."
+msgstr ""
+
+#: build/blocks/column/edit.js:1
+#: build/blocks/column/index.js:1
+#: src/blocks/column/edit.js:87
+msgid "Order value 2."
+msgstr ""
+
+#: build/blocks/column/edit.js:1
+#: build/blocks/column/index.js:1
+#: src/blocks/column/edit.js:88
+msgid "Order value 3."
+msgstr ""
+
+#: build/blocks/column/edit.js:1
+#: build/blocks/column/index.js:1
+#: src/blocks/column/edit.js:89
+msgid "Order value 4."
+msgstr ""
+
+#: build/blocks/column/edit.js:1
+#: build/blocks/column/index.js:1
+#: src/blocks/column/edit.js:90
+msgid "Order value 5."
+msgstr ""
+
+#: build/blocks/column/edit.js:1
+#: build/blocks/column/index.js:1
+#: src/blocks/column/edit.js:91
+msgid "Order value 6."
+msgstr ""
+
+#: build/blocks/column/edit.js:1
+#: build/blocks/column/index.js:1
+#: src/blocks/column/edit.js:92
+msgid "Order value 7."
+msgstr ""
+
+#: build/blocks/column/edit.js:1
+#: build/blocks/column/index.js:1
+#: src/blocks/column/edit.js:93
+msgid "Order value 8."
+msgstr ""
+
+#: build/blocks/column/edit.js:1
+#: build/blocks/column/index.js:1
+#: src/blocks/column/edit.js:94
+msgid "Order value 9."
+msgstr ""
+
+#: build/blocks/column/edit.js:1
+#: build/blocks/column/index.js:1
+#: src/blocks/column/edit.js:95
+msgid "Order value 10."
+msgstr ""
+
+#: build/blocks/column/edit.js:1
+#: build/blocks/column/index.js:1
+#: src/blocks/column/edit.js:96
+msgid "Order value 11."
+msgstr ""
+
+#: build/blocks/column/edit.js:1
+#: build/blocks/column/index.js:1
+#: src/blocks/column/edit.js:97
+msgid "Order value 12."
+msgstr ""
+
+#: build/blocks/column/edit.js:1
+#: build/blocks/column/index.js:1
+#: src/blocks/column/edit.js:105
+msgid "Add content here..."
+msgstr ""
+
+#: build/blocks/column/index.js:1
+#: build/blocks/row/index.js:1
+#: src/blocks/column/edit.js:115
+#: src/blocks/row/edit.js:163
+msgid "Reset"
+msgstr ""
+
+#: build/blocks/column/index.js:1
+#: src/blocks/column/edit.js:137
+#: src/blocks/column/edit.js:189
+#: src/blocks/column/edit.js:270
+#: src/blocks/column/edit.js:324
+#: src/blocks/column/edit.js:429
+#: src/blocks/column/edit.js:534
+#: src/blocks/column/edit.js:639
+msgid "Visibility"
+msgstr ""
+
+#: build/blocks/column/index.js:1
+#: src/blocks/column/edit.js:279
+#: src/blocks/column/edit.js:333
+#: src/blocks/column/edit.js:438
+#: src/blocks/column/edit.js:543
+#: src/blocks/column/edit.js:648
+msgid "Column is hidden at this breakpoint."
+msgstr ""
+
+#: build/blocks/column/index.js:1
+#: src/blocks/column/edit.js:287
+#: src/blocks/column/edit.js:343
+#: src/blocks/column/edit.js:448
+#: src/blocks/column/edit.js:553
+#: src/blocks/column/edit.js:658
+msgid "Columns"
+msgstr ""
+
+#: build/blocks/column/index.js:1
+#: src/blocks/column/edit.js:296
+#: src/blocks/column/edit.js:369
+#: src/blocks/column/edit.js:474
+#: src/blocks/column/edit.js:579
+#: src/blocks/column/edit.js:684
+msgid "Offset"
+msgstr ""
+
+#: build/blocks/column/index.js:1
+#: src/blocks/column/edit.js:305
+#: src/blocks/column/edit.js:395
+#: src/blocks/column/edit.js:500
+#: src/blocks/column/edit.js:605
+#: src/blocks/column/edit.js:710
+msgid "Order"
+msgstr ""
+
+#: build/blocks/container/edit.js:1
+#: build/blocks/container/index.js:1
+#: src/blocks/container/edit.js:25
+msgid "Type / to add a block"
+msgstr ""
+
+#: build/blocks/container/index.js:1
+#: src/blocks/container/edit.js:62
+msgid "Width"
+msgstr ""
+
+#: build/blocks/container/index.js:1
+#: src/blocks/container/edit.js:65
+msgid "Full Width"
+msgstr ""
+
+#: build/blocks/container/index.js:1
+#: src/blocks/container/edit.js:66
+msgid "Will use the class \"container-fluid\" instead of \"container\", so will display full width of the viewport."
+msgstr ""
+
+#: build/blocks/responsive-spacer/index.js:1
+#: src/blocks/responsive-spacer/edit.js:41
+msgid "Reset Height"
+msgstr ""
+
+#: build/blocks/responsive-spacer/index.js:1
+#: src/blocks/responsive-spacer/edit.js:86
+#: src/blocks/responsive-spacer/edit.js:102
+#: src/blocks/responsive-spacer/edit.js:126
+#: src/blocks/responsive-spacer/edit.js:150
+#: src/blocks/responsive-spacer/edit.js:174
+msgid "Height"
+msgstr ""
+
+#: build/blocks/row/edit.js:1
+#: build/blocks/row/index.js:1
+#: src/blocks/row/edit.js:38
+msgid "Align Top"
+msgstr ""
+
+#: build/blocks/row/edit.js:1
+#: build/blocks/row/index.js:1
+#: src/blocks/row/edit.js:40
+msgid "Aligns items to the top of the row."
+msgstr ""
+
+#: build/blocks/row/edit.js:1
+#: build/blocks/row/index.js:1
+#: src/blocks/row/edit.js:43
+msgid "Align Middle"
+msgstr ""
+
+#: build/blocks/row/edit.js:1
+#: build/blocks/row/index.js:1
+#: src/blocks/row/edit.js:45
+msgid "Aligns items to the center (vertical) of the row."
+msgstr ""
+
+#: build/blocks/row/edit.js:1
+#: build/blocks/row/index.js:1
+#: src/blocks/row/edit.js:51
+msgid "Align Bottom"
+msgstr ""
+
+#: build/blocks/row/edit.js:1
+#: build/blocks/row/index.js:1
+#: src/blocks/row/edit.js:53
+msgid "Aligns items to the bottom of the row."
+msgstr ""
+
+#: build/blocks/row/edit.js:1
+#: build/blocks/row/index.js:1
+#: src/blocks/row/edit.js:63
+msgid "Align Left (Start)"
+msgstr ""
+
+#: build/blocks/row/edit.js:1
+#: build/blocks/row/index.js:1
+#: src/blocks/row/edit.js:65
+msgid "Aligns columns to the left."
+msgstr ""
+
+#: build/blocks/row/edit.js:1
+#: build/blocks/row/index.js:1
+#: src/blocks/row/edit.js:68
+msgid "Align Center"
+msgstr ""
+
+#: build/blocks/row/edit.js:1
+#: build/blocks/row/index.js:1
+#: src/blocks/row/edit.js:70
+msgid "Aligns columns to the center."
+msgstr ""
+
+#: build/blocks/row/edit.js:1
+#: build/blocks/row/index.js:1
+#: src/blocks/row/edit.js:73
+msgid "Align Right (End)"
+msgstr ""
+
+#: build/blocks/row/edit.js:1
+#: build/blocks/row/index.js:1
+#: src/blocks/row/edit.js:75
+msgid "Aligns columns to the right."
+msgstr ""
+
+#: build/blocks/row/edit.js:1
+#: build/blocks/row/index.js:1
+#: src/blocks/row/edit.js:78
+msgid "Space Between"
+msgstr ""
+
+#: build/blocks/row/edit.js:1
+#: build/blocks/row/index.js:1
+#: src/blocks/row/edit.js:80
+msgid "Distributes columns evenly; first at start, last at end."
+msgstr ""
+
+#: build/blocks/row/edit.js:1
+#: build/blocks/row/index.js:1
+#: src/blocks/row/edit.js:86
+msgid "Space Around"
+msgstr ""
+
+#: build/blocks/row/edit.js:1
+#: build/blocks/row/index.js:1
+#: src/blocks/row/edit.js:88
+msgid "Distributes columns evenly with equal space around them."
+msgstr ""
+
+#: build/blocks/row/index.js:1
+#: src/blocks/row/edit.js:208
+msgid "Row Settings"
+msgstr ""
+
+#: build/blocks/row/index.js:1
+#: src/blocks/row/edit.js:210
+msgid "No Gutters"
+msgstr ""
+
+#: build/blocks/row/index.js:1
+#: src/blocks/row/edit.js:211
+msgid "Removes the padding (gutters) from the columns within this row."
+msgstr ""
+
+#: build/blocks/row/index.js:1
+#: src/blocks/row/edit.js:226
+#: src/blocks/row/edit.js:247
+#: src/blocks/row/edit.js:294
+#: src/blocks/row/edit.js:341
+#: src/blocks/row/edit.js:388
+msgid "Vertical Alignment"
+msgstr ""
+
+#: build/blocks/row/index.js:1
+#: src/blocks/row/edit.js:234
+#: src/blocks/row/edit.js:268
+#: src/blocks/row/edit.js:315
+#: src/blocks/row/edit.js:362
+#: src/blocks/row/edit.js:409
+msgid "Horizontal Alignment"
+msgstr ""
+
+#: build/blocks/column/block.json
+#: src/blocks/column/block.json
+msgctxt "block title"
+msgid "Grid: Column"
+msgstr ""
+
+#: build/blocks/column/block.json
+#: src/blocks/column/block.json
+msgctxt "block description"
+msgid "In a grid layout, content must be placed within columns."
+msgstr ""
+
+#: build/blocks/column/block.json
+#: src/blocks/column/block.json
+msgctxt "block keyword"
+msgid "Column"
+msgstr ""
+
+#: build/blocks/column/block.json
+#: src/blocks/column/block.json
+msgctxt "block keyword"
+msgid "column"
+msgstr ""
+
+#: build/blocks/container/block.json
+#: src/blocks/container/block.json
+msgctxt "block title"
+msgid "Grid: Container"
+msgstr ""
+
+#: build/blocks/container/block.json
+#: src/blocks/container/block.json
+msgctxt "block description"
+msgid "Add a container to wrap your content."
+msgstr ""
+
+#: build/blocks/container/block.json
+#: src/blocks/container/block.json
+msgctxt "block keyword"
+msgid "Container"
+msgstr ""
+
+#: build/blocks/container/block.json
+#: src/blocks/container/block.json
+msgctxt "block keyword"
+msgid "container"
+msgstr ""
+
+#: build/blocks/responsive-spacer/block.json
+#: src/blocks/responsive-spacer/block.json
+msgctxt "block title"
+msgid "Grid: Responsive Spacer"
+msgstr ""
+
+#: build/blocks/responsive-spacer/block.json
+#: src/blocks/responsive-spacer/block.json
+msgctxt "block description"
+msgid "Control vertical spacing between elements based on breakpoints."
+msgstr ""
+
+#: build/blocks/responsive-spacer/block.json
+#: src/blocks/responsive-spacer/block.json
+msgctxt "block keyword"
+msgid "Spacer"
+msgstr ""
+
+#: build/blocks/responsive-spacer/block.json
+#: src/blocks/responsive-spacer/block.json
+msgctxt "block keyword"
+msgid "spacing"
+msgstr ""
+
+#: build/blocks/responsive-spacer/block.json
+#: src/blocks/responsive-spacer/block.json
+msgctxt "block keyword"
+msgid "padding"
+msgstr ""
+
+#: build/blocks/responsive-spacer/block.json
+#: src/blocks/responsive-spacer/block.json
+msgctxt "block keyword"
+msgid "margin"
+msgstr ""
+
+#: build/blocks/row/block.json
+#: src/blocks/row/block.json
+msgctxt "block title"
+msgid "Grid: Row"
+msgstr ""
+
+#: build/blocks/row/block.json
+#: src/blocks/row/block.json
+msgctxt "block description"
+msgid "A wrapper for columns. Must be placed inside a 'Grid: Container' or 'Grid: Column' block."
+msgstr ""
+
+#: build/blocks/row/block.json
+#: src/blocks/row/block.json
+msgctxt "block keyword"
+msgid "row"
+msgstr ""
+
+#: build/blocks/row/block.json
+#: src/blocks/row/block.json
+msgctxt "block keyword"
+msgid "columns"
+msgstr ""

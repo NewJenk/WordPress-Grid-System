@@ -1,0 +1,87 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "grid-system/column",
+	"title": "Grid: Column",
+	"description": "In a grid layout, content must be placed within columns.",
+	"category": "layout",
+	"icon": "layout",
+	"keywords": [ "Column", "column" ],
+	"parent": [ "grid-system/row" ],
+	"attributes": {
+		"xsNone": {
+			"type": "boolean",
+			"default": false
+		},
+		"allSize": {
+			"type": "number",
+			"default": 12
+		},
+		"allOffset": {
+			"type": "number",
+			"default": 0
+		},
+		"orderXs": {
+			"type": "string"
+		},
+		"smNone": {
+			"type": "boolean",
+			"default": false
+		},
+		"smSize": {
+			"type": "number"
+		},
+		"smOffset": {
+			"type": "number"
+		},
+		"orderSm": {
+			"type": "string"
+		},
+		"mdNone": {
+			"type": "boolean",
+			"default": false
+		},
+		"mdSize": {
+			"type": "number"
+		},
+		"mdOffset": {
+			"type": "number"
+		},
+		"orderMd": {
+			"type": "string"
+		},
+		"lgNone": {
+			"type": "boolean",
+			"default": false
+		},
+		"lgSize": {
+			"type": "number"
+		},
+		"lgOffset": {
+			"type": "number"
+		},
+		"orderLg": {
+			"type": "string"
+		},
+		"xlNone": {
+			"type": "boolean",
+			"default": false
+		},
+		"xlSize": {
+			"type": "number"
+		},
+		"xlOffset": {
+			"type": "number"
+		},
+		"orderXl": {
+			"type": "string"
+		}
+	},
+	"supports": {
+		"html": false,
+		"anchor": true
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./editor.scss",
+	"style": "file:./style.scss"
+}

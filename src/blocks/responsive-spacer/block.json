@@ -1,0 +1,35 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "grid-system/responsive-spacer",
+	"title": "Grid: Responsive Spacer",
+	"description": "Control vertical spacing between elements based on breakpoints.",
+	"category": "layout",
+	"icon": "resizeCornerNE",
+	"keywords": [ "Spacer", "spacing", "padding", "margin" ],
+	"attributes": {
+		"paddingBottomXs": {
+			"type": "number",
+			"default": 3
+		},
+		"paddingBottomSm": {
+			"type": "number"
+		},
+		"paddingBottomMd": {
+			"type": "number"
+		},
+		"paddingBottomLg": {
+			"type": "number"
+		},
+		"paddingBottomXl": {
+			"type": "number"
+		}
+	},
+	"supports": {
+		"html": false,
+		"anchor": true
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./editor.scss",
+	"style": "file:./style.scss"
+}

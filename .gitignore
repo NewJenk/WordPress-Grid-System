@@ -1,0 +1,41 @@
+# ~~ Operating System Generated Files ~~
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# ~~ IDE/Editor Configuration ~~
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+nbproject/
+
+# ~~ Dependency Management ~~
+
+# Node.js dependencies
+/node_modules/
+
+# Node.js package lock file
+package-lock.json
+
+# Node.js/npm/Yarn log files
+npm-debug.log*
+yarn-error.log
+yarn-debug.log*
+
+# ~~ Build Artifacts / Compiled Assets ~~
+/dist/
+/build/
+
+# ~~ Log Files ~~
+*.log
+debug.log
+
+# ~~ Environment Variables ~~
+# Environment variable files
+.env
+.env.*
+!.env.example
+
+# PHPUnit cache
+.phpunit.result.cache

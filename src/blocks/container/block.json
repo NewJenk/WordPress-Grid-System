@@ -1,0 +1,23 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "grid-system/container",
+	"title": "Grid: Container",
+	"description": "Add a container to wrap your content.",
+	"category": "design",
+	"keywords": [ "Container", "container" ],
+	"attributes": {
+		"setWidthClass": {
+			"type": "boolean",
+			"default": false
+		}
+	},
+	"supports": {
+		"align": [ "full" ],
+		"anchor": true,
+		"html": false
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./editor.scss",
+	"style": "file:./style.scss"
+}

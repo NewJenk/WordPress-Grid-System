@@ -1,0 +1,55 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "grid-system/row",
+	"title": "Grid: Row",
+	"description": "A wrapper for columns. Must be placed inside a 'Grid: Container' or 'Grid: Column' block.",
+	"category": "layout",
+	"keywords": [ "row", "columns" ],
+	"parent": [ "grid-system/container", "grid-system/column" ],
+	"attributes": {
+		"noGutters": {
+			"type": "boolean",
+			"default": false
+		},
+		"alignItemsXs": {
+			"type": "string",
+			"default": "start"
+		},
+		"alignItemsSm": {
+			"type": "string"
+		},
+		"alignItemsMd": {
+			"type": "string"
+		},
+		"alignItemsLg": {
+			"type": "string"
+		},
+		"alignItemsXl": {
+			"type": "string"
+		},
+		"justifyContentXs": {
+			"type": "string",
+			"default": "start"
+		},
+		"justifyContentSm": {
+			"type": "string"
+		},
+		"justifyContentMd": {
+			"type": "string"
+		},
+		"justifyContentLg": {
+			"type": "string"
+		},
+		"justifyContentXl": {
+			"type": "string"
+		}
+	},
+	"supports": {
+		"html": false,
+		"anchor": true
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./editor.scss",
+	"style": "file:./style.scss"
+}
