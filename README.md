@@ -18,7 +18,7 @@ Instead of introducing another proprietary system, this plugin provides a lightw
 
 ## tl;dr (Quick Start)
 
-1.  **Download:** Grab the latest `.zip` file directly from the **[GitHub Releases page](https://github.com/shaunjenkins/grid-system/releases)**.
+1.  **Download:** Grab the latest `.zip` file directly from the **[GitHub Releases page](https://github.com/NewJenk/WordPress-Grid-System/releases)**.
 2.  **Install:** In your WordPress admin, go to `Plugins` > `Add New` > `Upload Plugin`, choose the `.zip` file, install and activate it.
 3.  **Use:** In the Block Editor, add a `Grid: Container` block. It will automatically include a `Row` and `Column` inside. Just click into the column to start adding your content (like text or images), or select the Row/Column blocks to adjust their responsive settings in the sidebar.
 
@@ -163,14 +163,14 @@ There are two main ways to install the plugin:
 
 ### Method 1: Via WordPress Admin
 
-1.  **Download the ZIP:** Go to the **[Grid System GitHub Releases page](https://github.com/shaunjenkins/grid-system/releases)** and download the latest release `.zip` file from the "Assets" section.
+1.  **Download the ZIP:** Go to the **[Grid System GitHub Releases page](https://github.com/NewJenk/WordPress-Grid-System/releases)** and download the latest release `.zip` file from the "Assets" section.
 2.  **Upload to WordPress:** In your WordPress admin dashboard, navigate to `Plugins` > `Add New` > `Upload Plugin`.
 3.  **Choose File:** Click `Choose File` (or similar) and select the `.zip` file you just downloaded.
 4.  **Install & Activate:** Click `Install Now` and then click `Activate Plugin`.
 
 ### Method 2: Via FTP/SFTP (Manual Upload)
 
-1.  **Download and Extract:** Go to the **[Grid System GitHub Releases page](https://github.com/shaunjenkins/grid-system/releases)**, download the latest release `.zip` file and extract its contents. You should have a folder named `grid-system`.
+1.  **Download and Extract:** Go to the **[Grid System GitHub Releases page](https://github.com/NewJenk/WordPress-Grid-System/releases)**, download the latest release `.zip` file and extract its contents. You should have a folder named `grid-system`.
 2.  **Upload Folder:** Connect to your website using an FTP or SFTP client and upload the entire extracted `grid-system` folder to your WordPress `wp-content/plugins/` directory.
 3.  **Activate in WordPress:** In your WordPress admin dashboard, navigate to `Plugins` > `Installed Plugins`. Find "Grid System" in the list and click `Activate`.
 
