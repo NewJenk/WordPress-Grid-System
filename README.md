@@ -16,6 +16,12 @@ The challenge of creating effective grid layouts is a well-explored topic in web
 
 Instead of introducing another proprietary system, this plugin provides a lightweight, modern implementation of the battle-tested grid system popularised by frameworks like Bootstrap. It's built on the idea that you should spend your time creating content, not fighting with layout fundamentals.
 
+## tl;dr (Quick Start)
+
+1.  **Download:** Grab the latest `.zip` file directly from the **[GitHub Releases page](https://github.com/shaunjenkins/grid-system/releases)**.
+2.  **Install:** In your WordPress admin, go to `Plugins` > `Add New` > `Upload Plugin`, choose the `.zip` file, install and activate it.
+3.  **Use:** In the Block Editor, add a `Grid: Container` block. It will automatically include a `Row` and `Column` inside. Just click into the column to start adding your content (like text or images), or select the Row/Column blocks to adjust their responsive settings in the sidebar.
+
 ### How It Works
 
 This plugin is lean by design. It includes **only the essential Bootstrap grid CSS** and a handful of responsive utility classes (totalling just **14KB** of minified CSS). There is no bloat from other components or JavaScript.
@@ -23,7 +29,7 @@ This plugin is lean by design. It includes **only the essential Bootstrap grid C
 The system uses the standard `container > row > column` structure:
 * **`.container`**: A wrapper that sets a `max-width` to keep your content neatly centred and readable.
 * **`.row`**: A wrapper for columns that uses a negative margin to counteract the padding on its columns. This clever trick is the key to enabling seamless, infinite nesting of grids within other grids.
-* **`.column`**: The block where your content lives. It comes with a complete set of responsive controls for width, offset, and visibility.
+* **`.column`**: The block where your content lives. It comes with a complete set of responsive controls for width, offset and visibility.
 
 To ensure performance and reliability, the grid styles are enqueued globally using the standard WordPress method, as a solid grid is a foundational element expected on most pages of a modern website.
 
@@ -31,10 +37,10 @@ To ensure performance and reliability, the grid styles are enqueued globally usi
 
 * **Effortless Responsive Layouts:** Build complex designs that automatically adapt to phones, tablets and desktops without writing any code.
 * **Intuitive Block Controls:** Settings are clearly organised in the block sidebar using consistent dropdowns, making adjustments simple and visual.
-* **Smart Inheritance + Easy Resets:** Set a style (like column width, alignment or order) for the smallest screen size (XS), and it automatically applies to all larger sizes. Need to change it just for tablets and up? Simply adjust the setting for the MD breakpoint. Want to go back to inheriting? Every setting for SM breakpoints and up has a Reset button – just click it! This saves you tons of time and makes responsive design incredibly intuitive.
+* **Smart Inheritance + Easy Resets:** Set a style (like column width, alignment or order) for the smallest screen size (XS) and it automatically applies to all larger sizes. Need to change it just for tablets and up? Simply adjust the setting for the MD breakpoint. Want to go back to inheriting? Every setting for SM breakpoints and up has a Reset button – just click it! This saves you tons of time and makes responsive design incredibly intuitive.
 * **5 Responsive Breakpoints:** Fine-tune your layout at five standard screen sizes (XS, SM, MD, LG, XL) for ultimate control. (But thanks to smart inheritance, you often only need to adjust two or three!)
 * **Familiar 12-Column System:** Based on the world's most popular grid framework (Bootstrap), making it easy to understand and incredibly flexible.
-* **Full Column Control:** Adjust column **width** (1-12), add horizontal space before columns (**offset**), change the visual **order** (First, Last, 0-12), and even **hide** columns completely – all controllable per breakpoint.
+* **Full Column Control:** Adjust column **width** (1-12), add horizontal space before columns (**offset**), change the visual **order** (First, Last, 0-12) and even **hide** columns completely – all controllable per breakpoint.
 * **Advanced Row Alignment:** Easily align all columns within a row **vertically** (top, middle, bottom) and **horizontally** (left, centre, right, space between/around), all with responsive controls using the same smart inheritance system.
 * **Responsive Spacing Utility:** Add vertical space between blocks that changes automatically based on screen size using the Responsive Spacer block.
 * **Lightweight & Fast:** Includes only the essential grid CSS (14KB minified), ensuring you're not loading unnecessary css.
@@ -68,7 +74,7 @@ Getting started with the Grid System is easy! Here’s how you build a typical l
         * **Medium (MD):** Applies from 768px up to 991px (Tablets, small laptops)
         * **Large (LG):** Applies from 992px up to 1199px (Laptops, desktops)
         * **Extra Large (XL):** Applies from 1200px upwards (Large desktops)
-    * **The Magic of Inheritance:** Settings flow upwards! Start by setting the **Columns** (width) and **Offset** for **Extra Small (XS)**. These settings will automatically apply to SM, MD, LG, and XL too!
+    * **The Magic of Inheritance:** Settings flow upwards! Start by setting the **Columns** (width) and **Offset** for **Extra Small (XS)**. These settings will automatically apply to SM, MD, LG and XL too!
     * **Overriding for Larger Screens:** Only change settings for larger breakpoints if you *need* the layout to be different. For example:
         * Set XS Columns to `12` (full width on phones).
         * Set MD Columns to `6` (half width on tablets and up). Now your column is full width on XS/SM and half width on MD/LG/XL. Easy!
@@ -141,7 +147,7 @@ To ensure consistency and prevent conflicts, please adhere to the following nami
 | **PHP Namespace** | `GRID_SYSTEM`                                | All PHP classes must be within this namespace.                                           |
 | **PHP Constants** | `GRID_SYSTEM`                                | Prefix for all defined PHP constants, e.g., `GRID_SYSTEM_PLUGIN_PATH`.                     |
 | **Prefix** | `grid_system`                                | A general prefix for non-class functions, hooks, or filters if needed.                   |
-| **Asset Prefix & Text Domain** | `grid-system`                       | Used as the text domain, block namespaces, and prefix for custom CSS classes, e.g., `.grid-system__title`. |
+| **Asset Prefix & Text Domain** | `grid-system`                       | Used as the text domain, block namespaces and prefix for custom CSS classes, e.g., `.grid-system__title`. |
 | **Plugin Name** | Grid System                                  | The full name of the plugin for use in user-facing text.                                 |
 | **Plugin URL** | `https://shaunjenkins.com/`                       | The primary URL for the plugin.                                                          |
 | **Plugin Description** | A powerful grid system for WordPress. Includes 4 Gutenberg (Block Editor) blocks that allow you to create beautiful, flexible and responsive layouts. | The description for the plugin.                                                          |
@@ -153,20 +159,20 @@ To ensure consistency and prevent conflicts, please adhere to the following nami
 
 ## Installation
 
-**1. GitHub Download (ZIP):**
+There are two main ways to install the plugin:
 
-* Go to the **[Grid System GitHub repository](https://github.com/NewJenk/WordPress-Grid-System)** and click on the **Releases** tab.
-* Download the latest release as a `.zip` file from the "Assets" section.
-* In your WordPress admin dashboard, navigate to `Plugins` > `Add New` > `Upload Plugin`.
-* Choose the downloaded ZIP file and click `Install Now`.
-* Activate the plugin.
+### Method 1: Via WordPress Admin
 
-**2. Manual Upload (FTP/SFTP):**
+1.  **Download the ZIP:** Go to the **[Grid System GitHub Releases page](https://github.com/shaunjenkins/grid-system/releases)** and download the latest release `.zip` file from the "Assets" section.
+2.  **Upload to WordPress:** In your WordPress admin dashboard, navigate to `Plugins` > `Add New` > `Upload Plugin`.
+3.  **Choose File:** Click `Choose File` (or similar) and select the `.zip` file you just downloaded.
+4.  **Install & Activate:** Click `Install Now` and then click `Activate Plugin`.
 
-* Download and extract the latest release `.zip` file from the **[GitHub Releases page](https://github.com/NewJenk/WordPress-Grid-System/releases)**.
-* Upload the entire extracted folder (`grid-system`) to your WordPress `wp-content/plugins/` directory.
-* In your WordPress admin dashboard, navigate to `Plugins` > `Installed Plugins`.
-* Find "Grid System" and click `Activate`.
+### Method 2: Via FTP/SFTP (Manual Upload)
+
+1.  **Download and Extract:** Go to the **[Grid System GitHub Releases page](https://github.com/shaunjenkins/grid-system/releases)**, download the latest release `.zip` file and extract its contents. You should have a folder named `grid-system`.
+2.  **Upload Folder:** Connect to your website using an FTP or SFTP client and upload the entire extracted `grid-system` folder to your WordPress `wp-content/plugins/` directory.
+3.  **Activate in WordPress:** In your WordPress admin dashboard, navigate to `Plugins` > `Installed Plugins`. Find "Grid System" in the list and click `Activate`.
 
 ## Development Setup
 
@@ -208,7 +214,7 @@ The plugin's JavaScript assets are built from a `src` directory into a `build` d
     ```
 
 5.  **Start the Development Process:**
-    Run the `start` script. This will watch for any changes you make to the JavaScript or SCSS files in the `src` directory, automatically recompile them, and provide hot-reloading in the editor.
+    Run the `start` script. This will watch for any changes you make to the JavaScript or SCSS files in the `src` directory, automatically recompile them and provide hot-reloading in the editor.
     ```bash
     npm run start
     ```
