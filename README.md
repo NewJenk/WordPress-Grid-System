@@ -6,8 +6,6 @@
 
 A powerful grid system for WordPress. Includes 4 Gutenberg (Block Editor) blocks that allow you to create beautiful, flexible and responsive layouts.
 
----
-
 ## Overview
 
 Grids are essential – they're the invisible structure, the metronome, that ensures consistency and helps designers and developers speak the same language.
