@@ -6,7 +6,6 @@
 	"description": "A wrapper for columns. Must be placed inside a 'Grid: Container' or 'Grid: Column' block.",
 	"category": "layout",
 	"keywords": [ "row", "columns" ],
-	"parent": [ "grid-system/container", "grid-system/column" ],
 	"attributes": {
 		"noGutters": {
 			"type": "boolean",
