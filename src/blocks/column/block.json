@@ -14,8 +14,8 @@
 			"default": false
 		},
 		"allSize": {
-			"type": "number",
-			"default": 12
+			"type": "string",
+			"default": "12"
 		},
 		"allOffset": {
 			"type": "number",
@@ -29,7 +29,7 @@
 			"default": false
 		},
 		"smSize": {
-			"type": "number"
+			"type": "string"
 		},
 		"smOffset": {
 			"type": "number"
@@ -42,7 +42,7 @@
 			"default": false
 		},
 		"mdSize": {
-			"type": "number"
+			"type": "string"
 		},
 		"mdOffset": {
 			"type": "number"
@@ -55,7 +55,7 @@
 			"default": false
 		},
 		"lgSize": {
-			"type": "number"
+			"type": "string"
 		},
 		"lgOffset": {
 			"type": "number"
@@ -68,7 +68,7 @@
 			"default": false
 		},
 		"xlSize": {
-			"type": "number"
+			"type": "string"
 		},
 		"xlOffset": {
 			"type": "number"

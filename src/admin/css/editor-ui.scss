@@ -8,3 +8,21 @@
 .components-button.grid-system-reset-button {
     margin-top: 10px !important;
 }
+
+.grid-system-range {
+    .components-input-control__container {
+        width: calc(45px);
+    }
+}
+
+.grid-system-col-control {
+    margin-bottom: calc(8px);
+
+    .components-base-control__field {
+        margin-bottom: 0;
+    }
+}
+
+.grid-system-auto-button {
+    height: 32px;
+}
