@@ -222,24 +222,72 @@ export default function Edit( { attributes, setAttributes } ) {
 		orderXl,
 	} = attributes;
 
-	// --- Smart Inheritance Logic ---
+// --- Smart Inheritance Logic ---
+
+	// This logic essentially mimics utils.js by tracking the last *visible* value.
+
+	// --- Size ---
 	const effAllSize = allSize; // Default is "12"
-	const effSmSize = smSize ?? effAllSize;
-	const effMdSize = mdSize ?? effSmSize;
-	const effLgSize = lgSize ?? effMdSize;
-	const effXlSize = xlSize ?? effLgSize;
+	let lastVisibleSize = effAllSize;
 
+	const effSmSize = smSize ?? lastVisibleSize;
+	if (!smNone) {
+		lastVisibleSize = effSmSize;
+	}
+
+	const effMdSize = mdSize ?? lastVisibleSize;
+	if (!mdNone) {
+		lastVisibleSize = effMdSize;
+	}
+
+	const effLgSize = lgSize ?? lastVisibleSize;
+	if (!lgNone) {
+		lastVisibleSize = effLgSize;
+	}
+
+	const effXlSize = xlSize ?? lastVisibleSize;
+
+	// --- Offset ---
 	const effAllOffset = allOffset || 0;
-	const effSmOffset = smOffset ?? effAllOffset;
-	const effMdOffset = mdOffset ?? effSmOffset;
-	const effLgOffset = lgOffset ?? effMdOffset;
-	const effXlOffset = xlOffset ?? effLgOffset;
+	let lastVisibleOffset = effAllOffset;
 
+	const effSmOffset = smOffset ?? lastVisibleOffset;
+	if (!smNone) {
+		lastVisibleOffset = effSmOffset;
+	}
+
+	const effMdOffset = mdOffset ?? lastVisibleOffset;
+	if (!mdNone) {
+		lastVisibleOffset = effMdOffset;
+	}
+
+	const effLgOffset = lgOffset ?? lastVisibleOffset;
+	if (!lgNone) {
+		lastVisibleOffset = effLgOffset;
+	}
+
+	const effXlOffset = xlOffset ?? lastVisibleOffset;
+
+	// --- Order ---
 	const effOrderXs = orderXs;
-	const effOrderSm = orderSm ?? effOrderXs;
-	const effOrderMd = orderMd ?? effOrderSm;
-	const effOrderLg = orderLg ?? effOrderMd;
-	const effOrderXl = orderXl ?? effOrderLg;
+	let lastVisibleOrder = effOrderXs;
+
+	const effOrderSm = orderSm ?? lastVisibleOrder;
+	if (!smNone) {
+		lastVisibleOrder = effOrderSm;
+	}
+
+	const effOrderMd = orderMd ?? lastVisibleOrder;
+	if (!mdNone) {
+		lastVisibleOrder = effOrderMd;
+	}
+
+	const effOrderLg = orderLg ?? lastVisibleOrder;
+	if (!lgNone) {
+		lastVisibleOrder = effOrderLg;
+	}
+
+	const effOrderXl = orderXl ?? lastVisibleOrder;
 	// --- End Smart Inheritance Logic ---
 
 	const blockProps = useBlockProps( {
