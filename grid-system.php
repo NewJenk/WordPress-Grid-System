@@ -3,7 +3,7 @@
  * Plugin Name:       Grid System
  * Plugin URI:        https://shaunjenkins.com/
  * Description:       A powerful grid system for WordPress. Includes 4 Gutenberg (Block Editor) blocks that allow you to create beautiful, flexible and responsive layouts.
- * Version:           1.0.0
+ * Version:           1.1.0
  * Requires at least: 6.0.9
  * Tested up to:      6.8.2
  * Requires PHP:      7.4.30

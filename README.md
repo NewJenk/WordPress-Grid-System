@@ -18,16 +18,16 @@ Instead of introducing another proprietary system, this plugin provides a lightw
 
 1.  **Download:** Grab the latest `.zip` file directly from the **[GitHub Releases page](https://github.com/NewJenk/WordPress-Grid-System/releases)**.
 2.  **Install:** In your WordPress admin, go to `Plugins` > `Add New` > `Upload Plugin`, choose the `.zip` file, install and activate it.
-3.  **Use:** In the Block Editor, add a `Grid: Container` block. It will automatically include a `Row` and `Column` inside. Just click into the column to start adding your content (like text or images), or select the Row/Column blocks to adjust their responsive settings in the sidebar.
+3.  **Use:** In the Block Editor, add a `Grid: Container` block. It will automatically include a `Row` and `Column` inside. Just click into the column to start adding your content (like text or images), or select the Row/Column blocks to adjust their responsive settings (like width, offset or auto-sizing) in the sidebar.
 
 ### How It Works
 
-This plugin is lean by design. It includes **only the essential Bootstrap grid CSS** and a handful of responsive utility classes (totalling just **14KB** of minified CSS). There is no bloat from other components or JavaScript.
+This plugin is lean by design. It includes **only the essential Bootstrap grid CSS** and a handful of responsive utility classes (totalling just **15KB** of minified CSS). There is no bloat from other components or JavaScript.
 
 The system uses the standard `container > row > column` structure:
 * **`.container`**: A wrapper that sets a `max-width` to keep your content neatly centred and readable.
 * **`.row`**: A wrapper for columns that uses a negative margin to counteract the padding on its columns. This clever trick is the key to enabling seamless, infinite nesting of grids within other grids.
-* **`.column`**: The block where your content lives. It comes with a complete set of responsive controls for width, offset and visibility.
+* **`.column`**: The block where your content lives. It comes with a complete set of responsive controls for width, auto-width, offset and visibility.
 
 To ensure performance and reliability, the grid styles are enqueued globally using the standard WordPress method, as a solid grid is a foundational element expected on most pages of a modern website.
 
@@ -39,9 +39,10 @@ To ensure performance and reliability, the grid styles are enqueued globally usi
 * **5 Responsive Breakpoints:** Fine-tune your layout at five standard screen sizes (XS, SM, MD, LG, XL) for ultimate control. (But thanks to smart inheritance, you often only need to adjust two or three!)
 * **Familiar 12-Column System:** Based on the world's most popular grid framework (Bootstrap), making it easy to understand and incredibly flexible.
 * **Full Column Control:** Adjust column **width** (1-12), add horizontal space before columns (**offset**), change the visual **order** (First, Last, 0-12) and even **hide** columns completely – all controllable per breakpoint.
+* **Auto-Width Columns:** Set any column's width to "Auto" with a single click. The column will automatically shrink to fit the width of its content. This is perfect for creating button-like elements or aligning items next to content of an unknown size. This is also fully responsive and works with the smart inheritance system.
 * **Advanced Row Alignment:** Easily align all columns within a row **vertically** (top, middle, bottom) and **horizontally** (left, centre, right, space between/around), all with responsive controls using the same smart inheritance system.
 * **Responsive Spacing Utility:** Add vertical space between blocks that changes automatically based on screen size using the Responsive Spacer block.
-* **Lightweight & Fast:** Includes only the essential grid CSS (14KB minified), ensuring you're not loading unnecessary css.
+* **Lightweight & Fast:** Includes only the essential grid CSS (15KB minified), ensuring you're not loading unnecessary css.
 * **Modern & Consistent UI:** Built with the latest WordPress Block Editor standards and a unified control pattern across blocks for a seamless and familiar experience.
 
 ## How to Use
@@ -73,6 +74,9 @@ Getting started with the Grid System is easy! Here’s how you build a typical l
         * **Large (LG):** Applies from 992px up to 1199px (Laptops, desktops)
         * **Extra Large (XL):** Applies from 1200px upwards (Large desktops)
     * **The Magic of Inheritance:** Settings flow upwards! Start by setting the **Columns** (width) and **Offset** for **Extra Small (XS)**. These settings will automatically apply to SM, MD, LG and XL too!
+    * **Setting Column Width (1-12 or Auto):** You have two choices for column width:
+        * **Range Slider (1-12):** Use the slider to select a specific width from 1 to 12.
+        * **"Auto" Button:** Click the "Auto" button next to the slider. This will set the column width to `auto`, causing it to shrink and only take up as much space as its content needs. The slider will be disabled. You can click the "Auto" button again to toggle it off and re-enable the slider.
     * **Overriding for Larger Screens:** Only change settings for larger breakpoints if you *need* the layout to be different. For example:
         * Set XS Columns to `12` (full width on phones).
         * Set MD Columns to `6` (half width on tablets and up). Now your column is full width on XS/SM and half width on MD/LG/XL. Easy!
@@ -106,7 +110,7 @@ Getting started with the Grid System is easy! Here’s how you build a typical l
 
 * **Column (`grid-system/column`)**
     * **Purpose:** The container for your content. Controls width, spacing, order and visibility per breakpoint.
-    * **Key Settings:** Visibility (dropdown), Columns (Width), Offset, Order (all responsive with inheritance/reset).
+    * **Key Settings:** Visibility (dropdown), Columns (Width 1-12 or Auto), Offset, Order (all responsive with inheritance/reset).
 
 * **Responsive Spacer (`grid-system/responsive-spacer`)**
     * **Purpose:** Adds adjustable vertical space between blocks. Unlike the core Spacer block which uses `height`, this block uses Bootstrap's `padding` utility classes (`p-*`) applied to an empty `div`. This allows the amount of space to change easily across different screen sizes using the responsive controls.
@@ -118,7 +122,7 @@ This plugin relies on a small set of Bootstrap utility classes. The plugin ensur
 
 * **Visibility:** `d-none`, `d-sm-none`... `d-xl-none`, `d-block`, `d-sm-block`... `d-xl-block`
 * **Ordering:** `order-first`, `order-last`, `order-0`... `order-12`, `order-sm-first`... `order-xl-12`
-* **Grid Structure:** `.container`, `.container-fluid`, `.row`, `.no-gutters`, `col-*`, `offset-*`
+* **Grid Structure:** `.container`, `.container-fluid`, `.row`, `.no-gutters`, `col-*` (including `col-auto` and its responsive variants like `col-md-auto`), `offset-*`
 * **Row Alignment:** `align-items-*`, `justify-content-*` (and responsive variants)
 * **Spacing:** `p-*` (and responsive variants). **Note:** This plugin extends Bootstrap's default scale, providing classes from `p-0` up to `p-20` to allow for finer control via the Responsive Spacer block.
 

@@ -21,7 +21,7 @@ import { undo, chevronDown, seen, unseen } from '@wordpress/icons';
 // Shared utilities
 import { getColumnClasses } from './utils';
 
-// Define translatable labels
+// --- Define translatable labels/help text (no changes) ---
 const responsiveSizeNames = {
 	all: __( 'Extra Small Viewports', 'grid-system' ),
 	sm: __( 'Small Viewports', 'grid-system' ),
@@ -29,8 +29,6 @@ const responsiveSizeNames = {
 	lg: __( 'Large Viewports', 'grid-system' ),
 	xl: __( 'Extra Large Viewports', 'grid-system' ),
 };
-
-// Define breakpoint help text
 const breakpointHelpText = {
 	all: __( 'Will apply from 0px to 575px', 'grid-system' ),
 	sm: __( 'Will apply from 576px to 767px', 'grid-system' ),
@@ -38,8 +36,6 @@ const breakpointHelpText = {
 	lg: __( 'Will apply from 992px to 1199px', 'grid-system' ),
 	xl: __( 'Will apply from 1200px and up', 'grid-system' ),
 };
-
-// Define Visibility options
 const VISIBILITY_OPTIONS = [
 	{
 		label: __( 'Visible', 'grid-system' ),
@@ -55,12 +51,10 @@ const VISIBILITY_OPTIONS = [
 		),
 	},
 ];
-
-// --- UPDATE ORDER_OPTIONS with descriptions ---
 const ORDER_OPTIONS = [
 	{
 		label: __( 'Default', 'grid-system' ),
-		value: undefined, // Explicitly undefined for default/inherit
+		value: undefined,
 		description: __(
 			'Column appears in its natural DOM order.',
 			'grid-system'
@@ -229,7 +223,7 @@ export default function Edit( { attributes, setAttributes } ) {
 	} = attributes;
 
 	// --- Smart Inheritance Logic ---
-	const effAllSize = allSize;
+	const effAllSize = allSize; // Default is "12"
 	const effSmSize = smSize ?? effAllSize;
 	const effMdSize = mdSize ?? effSmSize;
 	const effLgSize = lgSize ?? effMdSize;
@@ -257,6 +251,48 @@ export default function Edit( { attributes, setAttributes } ) {
 		templateLock: false,
 	} );
 
+	// --- Helper function for size RangeControl value ---
+	// Ensures the RangeControl gets a number, even if the attribute is "auto"
+	const getRangeValue = ( effectiveSize ) => {
+		return effectiveSize === 'auto'
+			? 12 // Default slider position when auto
+			: parseInt( effectiveSize, 10 );
+	};
+
+	// Calculate help text *before* the component
+	const allHelpText =
+		effAllSize === 'auto'
+			? __( 'Set to "Auto"', 'grid-system' )
+			: undefined;
+
+	const smHelpText =
+		effSmSize === 'auto'
+			? smSize === 'auto'
+				? __( 'Set to "Auto"', 'grid-system' )
+				: __( 'Inheriting "Auto"', 'grid-system' )
+			: undefined;
+
+	const mdHelpText =
+		effMdSize === 'auto'
+			? mdSize === 'auto'
+				? __( 'Set to "Auto"', 'grid-system' )
+				: __( 'Inheriting "Auto"', 'grid-system' )
+			: undefined;
+
+	const lgHelpText =
+		effLgSize === 'auto'
+			? lgSize === 'auto'
+				? __( 'Set to "Auto"', 'grid-system' )
+				: __( 'Inheriting "Auto"', 'grid-system' )
+			: undefined;
+
+	const xlHelpText =
+		effXlSize === 'auto'
+			? xlSize === 'auto'
+				? __( 'Set to "Auto"', 'grid-system' )
+				: __( 'Inheriting "Auto"', 'grid-system' )
+			: undefined;
+
 	return (
 		<>
 			<InspectorControls>
@@ -283,16 +319,55 @@ export default function Edit( { attributes, setAttributes } ) {
 							</Notice>
 						) : (
 							<>
-								<RangeControl
+								<BaseControl
 									label={ __( 'Columns', 'grid-system' ) }
-									value={ effAllSize }
-									onChange={ ( value ) =>
-										setAttributes( { allSize: value } )
-									}
-									min={ 1 }
-									max={ 12 }
-								/>
+									id="grid-system-columns-all"
+									className='grid-system-col-control'
+									help={ allHelpText }
+								>
+									<Flex align="flex-end">
+										<FlexItem isBlock>
+											<RangeControl
+												className='grid-system-range'
+												value={ getRangeValue(
+													effAllSize
+												) }
+												onChange={ ( value ) =>
+													setAttributes( {
+														allSize: String( value ),
+													} )
+												}
+												min={ 1 }
+												max={ 12 }
+												disabled={
+													effAllSize === 'auto'
+												}
+											/>
+										</FlexItem>
+										<FlexItem>
+											<Button
+												className="grid-system-auto-button"
+												isPressed={
+													effAllSize === 'auto'
+												}
+												onClick={ () =>
+													setAttributes( {
+														allSize:
+															allSize === 'auto'
+																? '12'
+																: 'auto',
+													} )
+												}
+												variant="tertiary"
+											>
+												{ __( 'Auto', 'grid-system' ) }
+											</Button>
+										</FlexItem>
+									</Flex>
+								</BaseControl>
+
 								<RangeControl
+									className='grid-system-range'
 									label={ __( 'Offset', 'grid-system' ) }
 									value={ effAllOffset }
 									onChange={ ( value ) =>
@@ -337,35 +412,67 @@ export default function Edit( { attributes, setAttributes } ) {
 							</Notice>
 						) : (
 							<>
+								<BaseControl
+									label={ __( 'Columns', 'grid-system' ) }
+									id="grid-system-columns-sm"
+									className='grid-system-col-control'
+									help={ smHelpText }
+								>
+									<Flex align="flex-end">
+										<FlexItem isBlock>
+											<RangeControl
+												className='grid-system-range'
+												value={ getRangeValue(
+													effSmSize
+												) }
+												onChange={ ( value ) =>
+													setAttributes( {
+														smSize: String( value ),
+													} )
+												}
+												min={ 1 }
+												max={ 12 }
+												disabled={
+													effSmSize === 'auto'
+												}
+											/>
+										</FlexItem>
+										<FlexItem>
+											<Button
+												className="grid-system-auto-button"
+												isPressed={
+													effSmSize === 'auto'
+												}
+												onClick={ () =>
+													setAttributes( {
+														smSize:
+															effSmSize === 'auto'
+																? '12'
+																: 'auto',
+													} )
+												}
+												variant="tertiary"
+											>
+												{ __( 'Auto', 'grid-system' ) }
+											</Button>
+										</FlexItem>
+										<FlexItem>
+											<ResetButton
+												attribute={ smSize }
+												onReset={ () =>
+													setAttributes( {
+														smSize: undefined,
+													} )
+												}
+											/>
+										</FlexItem>
+									</Flex>
+								</BaseControl>
+
 								<Flex>
 									<FlexItem isBlock>
 										<RangeControl
-											label={ __(
-												'Columns',
-												'grid-system'
-											) }
-											value={ effSmSize }
-											onChange={ ( value ) =>
-												setAttributes( {
-													smSize: value,
-												} )
-											}
-											min={ 1 }
-											max={ 12 }
-										/>
-									</FlexItem>
-									<ResetButton
-										attribute={ smSize }
-										onReset={ () =>
-											setAttributes( {
-												smSize: undefined,
-											} )
-										}
-									/>
-								</Flex>
-								<Flex>
-									<FlexItem isBlock>
-										<RangeControl
+											className='grid-system-range'
 											label={ __(
 												'Offset',
 												'grid-system'
@@ -442,35 +549,66 @@ export default function Edit( { attributes, setAttributes } ) {
 							</Notice>
 						) : (
 							<>
+								<BaseControl
+									label={ __( 'Columns', 'grid-system' ) }
+									id="grid-system-columns-md"
+									className='grid-system-col-control'
+									help={ mdHelpText }
+								>
+									<Flex align="flex-end">
+										<FlexItem isBlock>
+											<RangeControl
+												className='grid-system-range'
+												value={ getRangeValue(
+													effMdSize
+												) }
+												onChange={ ( value ) =>
+													setAttributes( {
+														mdSize: String( value ),
+													} )
+												}
+												min={ 1 }
+												max={ 12 }
+												disabled={
+													effMdSize === 'auto'
+												}
+											/>
+										</FlexItem>
+										<FlexItem>
+											<Button
+												className="grid-system-auto-button"
+												isPressed={
+													effMdSize === 'auto'
+												}
+												onClick={ () =>
+													setAttributes( {
+														mdSize:
+															effMdSize === 'auto'
+																? '12'
+																: 'auto',
+													} )
+												}
+												variant="tertiary"
+											>
+												{ __( 'Auto', 'grid-system' ) }
+											</Button>
+										</FlexItem>
+										<FlexItem>
+											<ResetButton
+												attribute={ mdSize }
+												onReset={ () =>
+													setAttributes( {
+														mdSize: undefined,
+													} )
+												}
+											/>
+										</FlexItem>
+									</Flex>
+								</BaseControl>
 								<Flex>
 									<FlexItem isBlock>
 										<RangeControl
-											label={ __(
-												'Columns',
-												'grid-system'
-											) }
-											value={ effMdSize }
-											onChange={ ( value ) =>
-												setAttributes( {
-													mdSize: value,
-												} )
-											}
-											min={ 1 }
-											max={ 12 }
-										/>
-									</FlexItem>
-									<ResetButton
-										attribute={ mdSize }
-										onReset={ () =>
-											setAttributes( {
-												mdSize: undefined,
-											} )
-										}
-									/>
-								</Flex>
-								<Flex>
-									<FlexItem isBlock>
-										<RangeControl
+											className='grid-system-range'
 											label={ __(
 												'Offset',
 												'grid-system'
@@ -547,35 +685,66 @@ export default function Edit( { attributes, setAttributes } ) {
 							</Notice>
 						) : (
 							<>
+								<BaseControl
+									label={ __( 'Columns', 'grid-system' ) }
+									id="grid-system-columns-lg"
+									className='grid-system-col-control'
+									help={ lgHelpText }
+								>
+									<Flex align="flex-end">
+										<FlexItem isBlock>
+											<RangeControl
+												className='grid-system-range'
+												value={ getRangeValue(
+													effLgSize
+												) }
+												onChange={ ( value ) =>
+													setAttributes( {
+														lgSize: String( value ),
+													} )
+												}
+												min={ 1 }
+												max={ 12 }
+												disabled={
+													effLgSize === 'auto'
+												}
+											/>
+										</FlexItem>
+										<FlexItem>
+											<Button
+												className="grid-system-auto-button"
+												isPressed={
+													effLgSize === 'auto'
+												}
+												onClick={ () =>
+													setAttributes( {
+														lgSize:
+															effLgSize === 'auto'
+																? '12'
+																: 'auto',
+													} )
+												}
+												variant="tertiary"
+											>
+												{ __( 'Auto', 'grid-system' ) }
+											</Button>
+										</FlexItem>
+										<FlexItem>
+											<ResetButton
+												attribute={ lgSize }
+												onReset={ () =>
+													setAttributes( {
+														lgSize: undefined,
+													} )
+												}
+											/>
+										</FlexItem>
+									</Flex>
+								</BaseControl>
 								<Flex>
 									<FlexItem isBlock>
 										<RangeControl
-											label={ __(
-												'Columns',
-												'grid-system'
-											) }
-											value={ effLgSize }
-											onChange={ ( value ) =>
-												setAttributes( {
-													lgSize: value,
-												} )
-											}
-											min={ 1 }
-											max={ 12 }
-										/>
-									</FlexItem>
-									<ResetButton
-										attribute={ lgSize }
-										onReset={ () =>
-											setAttributes( {
-												lgSize: undefined,
-											} )
-										}
-									/>
-								</Flex>
-								<Flex>
-									<FlexItem isBlock>
-										<RangeControl
+											className='grid-system-range'
 											label={ __(
 												'Offset',
 												'grid-system'
@@ -652,35 +821,66 @@ export default function Edit( { attributes, setAttributes } ) {
 							</Notice>
 						) : (
 							<>
+								<BaseControl
+									label={ __( 'Columns', 'grid-system' ) }
+									id="grid-system-columns-xl"
+									className='grid-system-col-control'
+									help={ xlHelpText }
+								>
+									<Flex align="flex-end">
+										<FlexItem isBlock>
+											<RangeControl
+												className='grid-system-range'
+												value={ getRangeValue(
+													effXlSize
+												) }
+												onChange={ ( value ) =>
+													setAttributes( {
+														xlSize: String( value ),
+													} )
+												}
+												min={ 1 }
+												max={ 12 }
+												disabled={
+													effXlSize === 'auto'
+												}
+											/>
+										</FlexItem>
+										<FlexItem>
+											<Button
+												className="grid-system-auto-button"
+												isPressed={
+													effXlSize === 'auto'
+												}
+												onClick={ () =>
+													setAttributes( {
+														xlSize:
+															effXlSize === 'auto'
+																? '12'
+																: 'auto',
+													} )
+												}
+												variant="tertiary"
+											>
+												{ __( 'Auto', 'grid-system' ) }
+											</Button>
+										</FlexItem>
+										<FlexItem>
+											<ResetButton
+												attribute={ xlSize }
+												onReset={ () =>
+													setAttributes( {
+														xlSize: undefined,
+													} )
+												}
+											/>
+										</FlexItem>
+									</Flex>
+								</BaseControl>
 								<Flex>
 									<FlexItem isBlock>
 										<RangeControl
-											label={ __(
-												'Columns',
-												'grid-system'
-											) }
-											value={ effXlSize }
-											onChange={ ( value ) =>
-												setAttributes( {
-													xlSize: value,
-												} )
-											}
-											min={ 1 }
-											max={ 12 }
-										/>
-									</FlexItem>
-									<ResetButton
-										attribute={ xlSize }
-										onReset={ () =>
-											setAttributes( {
-												xlSize: undefined,
-											} )
-										}
-									/>
-								</Flex>
-								<Flex>
-									<FlexItem isBlock>
-										<RangeControl
+											className='grid-system-range'
 											label={ __(
 												'Offset',
 												'grid-system'
