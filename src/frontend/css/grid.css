@@ -5,9 +5,30 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  *
  * --- MODIFICATIONS ---
- * Minimised & Padding Extended (pb-6 to pb-20) for WordPress Grid System Plugin
+ * Custom build for WordPress Grid System Plugin.
+ * - Minimised codebase
+ * - Extended padding utilities (up to p-20)
+ * - Added global 'box-sizing: border-box' reset for grid compatibility
+ * - Added padding reset for nested containers
+ *
  * Contributor: Shaun Jenkins (shaunjenkins.com)
  */
+/**
+ * Set the box-sizing model for all elements.
+ * This ensures that 'padding' is included in the element's total width (50% = 50%),
+ * which is essential for the grid columns to fit side-by-side correctly.
+ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Padding reset for nested containers */
+.wp-block-grid-system-container .wp-block-grid-system-container {
+  padding: 0;
+}
+
 .container,
 .container-fluid {
   width: 100%;
